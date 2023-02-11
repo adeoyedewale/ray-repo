@@ -1,7 +1,6 @@
 # Frontend Dockerfile
 FROM node:14
-RUN mkdir -p /app/build
-WORKDIR /app/build
-COPY frontend/build/ /app/build
+WORKDIR /app
+COPY frontend/build/ /app
 EXPOSE 3000
 CMD ["npm", "start"]
