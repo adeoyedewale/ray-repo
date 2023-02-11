@@ -17,14 +17,14 @@ pipeline {
         stage("Build Frontend") {
             steps {
                 sh "cd frontend && npm ci && npm install && npm run build"
-		sh 'cd ..'
+		sh "cd .."
             }
         }
 
         stage("Build Backend") {
             steps {
                 sh "cd backend && npm ci && npm install"
-		sh 'cd ..'
+		sh "cd .."
             }
         }
 
@@ -48,9 +48,9 @@ pipeline {
 	 stage('Push') {
 	      steps {
 		      withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-			      sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-			      sh 'docker push $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER'
-			      sh 'docker push $DOCKER_USERNAME/raybackend:$BUILD_NUMBER'
+			      sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
+			      sh "docker push $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER"
+			      sh "docker push $DOCKER_USERNAME/raybackend:$BUILD_NUMBER"
 		      }
 	      }
       }
