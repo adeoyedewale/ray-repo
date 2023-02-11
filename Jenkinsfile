@@ -31,12 +31,12 @@ pipeline {
         stage("Build Docker Images") {
             steps {
 		 //sh "cd frontend"
-                //sh "docker build -t $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER -f frontend/Dockerfile ./frontend"
-		sh "docker build -t $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER ./frontend"
+                sh "docker build -t eruobodo/rayfrontend:$BUILD_NUMBER -f frontend/Dockerfile ./frontend"
+		//sh "docker build -t eruobodo/rayfrontend:$BUILD_NUMBER ./frontend"
 		//sh "cd .."
 		//sh "cd backend"
-                //sh "docker build -t $DOCKER_USERNAME/raybackend:$BUILD_NUMBER -f backend/Dockerfile ./backend"
-		sh "docker build -t $DOCKER_USERNAME/raybackend:$BUILD_NUMBER ./backend"
+                sh "docker build -t eruobodo/raybackend:$BUILD_NUMBER -f backend/Dockerfile ./backend"
+		//sh "docker build -t $DOCKER_USERNAME/raybackend:$BUILD_NUMBER ./backend"
             }
         }
       /*stage('Push Images to Docker Hub') {
