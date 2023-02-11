@@ -32,7 +32,7 @@ pipeline {
             steps {
                 //sh "docker build -t $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER -f frontend/Dockerfile ./frontend"
 		sh "docker build -t $DOCKER_USERNAME/rayfrontend:$BUILD_NUMBER ./frontend"
-		sh "cd .."
+		//sh "cd .."
                 //sh "docker build -t $DOCKER_USERNAME/raybackend:$BUILD_NUMBER -f backend/Dockerfile ./backend"
 		sh "docker build -t $DOCKER_USERNAME/raybackend:$BUILD_NUMBER -f backend/Dockerfile ./backend"
             }
