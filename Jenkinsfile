@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	AWS_DEFAULT_REGION="us-east-1"
-	THE_BUTLER_SAYS_SO=credentials('aws-cred3')
+	THE_BUTLER_SAYS_SO=credentials('aws-cred4')
       }
 
     stages {
